@@ -1,0 +1,8 @@
+{
+  "name": "Técnogest - Consultoria e Formações Industriais",
+  "description": "Plataforma oficial da Técnogest Angola: consultoria, gestão de carreiras onshore/offshore, formações industriais certificadas pelo INEFOP, Plano Portugal e inscrições online.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
