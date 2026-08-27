@@ -262,11 +262,6 @@ export const TecnogestFlyers: React.FC = () => {
                       <span className="leading-snug">{item}</span>
                     </div>
                   ))}
-                  {([...(flyer.highlights || []), ...flyer.benefits]).length > 3 && (
-                     <div className="text-xs text-slate-400 font-medium pl-7">
-                       + {([...(flyer.highlights || []), ...flyer.benefits]).length - 3} mais detalhes no modal
-                     </div>
-                  )}
                 </div>
 
                 {/* Actions Footer */}
