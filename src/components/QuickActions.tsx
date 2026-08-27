@@ -260,7 +260,7 @@ export const QuickActions: React.FC = () => {
 
         {/* Quick Settings / Simulator Button */}
         <button
-          onClick={() => setCurrentView('enrollment')}
+          onClick={() => setCurrentView('enroll')}
           className="group text-left p-4 rounded-xl bg-surface-container hover:bg-surface-container-high border border-outline-variant/70 text-primary transition-all shadow-2xs hover:shadow-xs cursor-pointer flex flex-col justify-between"
         >
           <div className="flex items-center justify-between w-full">
