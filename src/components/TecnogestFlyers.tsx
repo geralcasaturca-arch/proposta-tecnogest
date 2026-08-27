@@ -206,6 +206,13 @@ export const TecnogestFlyers: React.FC = () => {
                 activeTab === 'portugal'
                   ? 'bg-[#E53935] text-white font-extrabold shadow-sm'
                   : 'bg-white/10 text-slate-300 hover:bg-white/15 border border-white/10'
+              }`}
+            >
+              Plano Portugal
+            </button>
+          </div>
+        </div>
+
         {/* Banners Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredFlyers.map((flyer) => (
