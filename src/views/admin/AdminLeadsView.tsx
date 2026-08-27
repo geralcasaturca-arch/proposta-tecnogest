@@ -220,11 +220,11 @@ export const AdminLeadsView: React.FC = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
+        <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto">
           <select
             value={filterPolo}
             onChange={e => setFilterPolo(e.target.value)}
-            className="px-3 py-1.5 rounded-xl border border-outline-variant bg-surface-container text-xs font-semibold focus:border-primary outline-hidden"
+            className="w-full sm:w-auto px-3 py-1.5 rounded-xl border border-outline-variant bg-surface-container text-xs font-semibold focus:border-primary outline-hidden"
           >
             <option value="all">Todos os Polos</option>
             {polos.map(p => (
@@ -234,7 +234,7 @@ export const AdminLeadsView: React.FC = () => {
             ))}
           </select>
 
-          <div className="relative w-full md:w-60">
+          <div className="relative w-full sm:w-60">
             <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">
               search
             </span>

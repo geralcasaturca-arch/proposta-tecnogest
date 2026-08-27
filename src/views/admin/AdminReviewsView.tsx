@@ -180,11 +180,11 @@ export const AdminReviewsView: React.FC = () => {
           />
         </div>
 
-        <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto">
+        <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto">
           <select
             value={filterRating}
             onChange={e => setFilterRating(e.target.value === 'all' ? 'all' : Number(e.target.value))}
-            className="px-3 py-2 rounded-xl border border-outline-variant bg-surface-container text-xs font-semibold focus:border-primary outline-hidden"
+            className="w-full sm:w-auto px-3 py-2 rounded-xl border border-outline-variant bg-surface-container text-xs font-semibold focus:border-primary outline-hidden"
           >
             <option value="all">Todas as Estrelas</option>
             <option value="5">⭐⭐⭐⭐⭐ (5 Estrelas)</option>
@@ -197,7 +197,7 @@ export const AdminReviewsView: React.FC = () => {
           <select
             value={filterCourse}
             onChange={e => setFilterCourse(e.target.value)}
-            className="px-3 py-2 rounded-xl border border-outline-variant bg-surface-container text-xs font-semibold focus:border-primary outline-hidden max-w-[200px]"
+            className="w-full sm:w-auto px-3 py-2 rounded-xl border border-outline-variant bg-surface-container text-xs font-semibold focus:border-primary outline-hidden max-w-[200px]"
           >
             <option value="all">Todos os Cursos</option>
             {courses.map(c => (
