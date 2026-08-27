@@ -27,7 +27,7 @@ export const OFFICIAL_FLAYERS: FlyerData[] = [
     id: 'flyer-rigger',
     title: '04 RIGGER SINALEIRO',
     subtitle: 'Manobras de Cargas, Içamentos e Sinais Internacionais',
-    badge: 'BOLSAS DE ESTUDO & VAGAS ABERTAS',
+    badge: 'BOLSAS DE ESTUDO',
     badgeColor: 'bg-[#FF5722] text-white',
     imageBg: 'https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=1000&q=80',
     accentColor: '#00D2FF',
@@ -48,7 +48,7 @@ export const OFFICIAL_FLAYERS: FlyerData[] = [
     id: 'flyer-cq',
     title: 'CURSO PROFISSIONAL CONTROLE DE QUALIDADE',
     subtitle: 'Inspeção Industrial, Metrologia e Normas de Qualidade',
-    badge: 'CURSO PROFISSIONAL CERTIFICADO',
+    badge: 'CURSO PROFISSIONAL',
     badgeColor: 'bg-[#00D2FF] text-[#0A2558]',
     imageBg: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80',
     accentColor: '#00D2FF',
@@ -70,7 +70,7 @@ export const OFFICIAL_FLAYERS: FlyerData[] = [
     id: 'flyer-hst',
     title: 'HIGIENE E SEGURANÇA NO TRABALHO (HST)',
     subtitle: 'Prevenção de Riscos Laborais, Níveis I, II e III',
-    badge: 'FORMAÇÃO OFICIAL 30 DIAS',
+    badge: 'FORMAÇÃO 30 DIAS',
     badgeColor: 'bg-[#FFC107] text-[#0A2558]',
     imageBg: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80',
     accentColor: '#FFC107',
@@ -91,7 +91,7 @@ export const OFFICIAL_FLAYERS: FlyerData[] = [
     id: 'flyer-industriais',
     title: 'CURSOS INDUSTRIAIS TÉCNOGEST',
     subtitle: 'Qualificação Prática com Pátio de Manobras e Oficinas',
-    badge: 'INOVAR PARA MELHOR SERVIR',
+    badge: 'CURSOS INDUSTRIAIS',
     badgeColor: 'bg-[#00D2FF] text-[#0A2558]',
     imageBg: 'https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80',
     accentColor: '#FF9800',
@@ -111,14 +111,14 @@ export const OFFICIAL_FLAYERS: FlyerData[] = [
     contacts: ['(+244) 948 235 692', '(+244) 943 932 890'],
     location: 'Bairro Valódia, Ex Combates, Edifício 206, 10º Andar (Edifício da Comunicação Social)',
     partners: ['TÉCNOFORM', 'INEFOP', 'GOVERNO DE ANGOLA'],
-    extraNote: 'Facebook: TECNOGEST ANGOLA',
+    extraNote: 'Visitar Facebook',
     whatsappText: 'Olá Técnogest, vi o catálogo de Cursos Industriais e gostaria de saber as datas das próximas turmas.'
   },
   {
     id: 'flyer-portugal',
-    title: '✈️ PLANO PORTUGAL 🇵🇹',
+    title: 'PLANO PORTUGAL',
     subtitle: 'Visto de Trabalho + Curso Técnico + Direito a Contrato de Trabalho',
-    badge: 'PROGRAMA INTERNACIONAL EXCLUSIVO',
+    badge: 'PROGRAMA INTERNACIONAL',
     badgeColor: 'bg-[#E53935] text-white',
     imageBg: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1000&q=80',
     accentColor: '#00D2FF',
@@ -166,16 +166,16 @@ export const TecnogestFlyers: React.FC = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
           <div className="inline-flex items-center gap-2 bg-white/10 border border-[#00D2FF]/40 px-4 py-1.5 rounded-full text-xs font-black tracking-widest text-[#00D2FF] uppercase shadow-md">
-            <span className="material-symbols-outlined text-[16px]">campaign</span>
-            <span>Banners Oficiais de Formação Técnogest</span>
+            <span className="material-symbols-outlined text-[16px]">school</span>
+            <span>Formações Técnogest</span>
           </div>
 
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
-            Cartazes Oficiais & Convocatórias Abertas
+            Inscrições Abertas
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-            Consulte os flyers oficiais das nossas formações industriais, bolsas de estudo para Rigger, turmas de Controlo de Qualidade e o exclusivo <strong className="text-[#00D2FF]">Plano Portugal</strong>.
+            Explore as vagas disponíveis para os cursos industriais, bolsas de estudo e o <strong className="text-[#00D2FF]">Plano Portugal</strong>.
           </p>
 
           {/* Filter Pills - Aligned on the grid */}
@@ -188,7 +188,7 @@ export const TecnogestFlyers: React.FC = () => {
                   : 'bg-white/10 text-slate-300 hover:bg-white/15 border border-white/10'
               }`}
             >
-              Todos os Cartazes ({OFFICIAL_FLAYERS.length})
+              Todos ({OFFICIAL_FLAYERS.length})
             </button>
             <button
               onClick={() => setActiveTab('industriais')}
@@ -198,7 +198,7 @@ export const TecnogestFlyers: React.FC = () => {
                   : 'bg-white/10 text-slate-300 hover:bg-white/15 border border-white/10'
               }`}
             >
-              Cursos Industriais & HST
+              Cursos Industriais e HST
             </button>
             <button
               onClick={() => setActiveTab('portugal')}
@@ -208,7 +208,7 @@ export const TecnogestFlyers: React.FC = () => {
                   : 'bg-white/10 text-slate-300 hover:bg-white/15 border border-white/10'
               }`}
             >
-              ✈️ Plano Portugal 🇵🇹
+              Plano Portugal
             </button>
           </div>
         </div>
@@ -270,7 +270,7 @@ export const TecnogestFlyers: React.FC = () => {
                   {flyer.highlights && (
                     <div className="bg-white/5 border border-white/10 rounded-xl p-3 space-y-1">
                       <p className="text-[10px] font-black uppercase text-[#00D2FF] tracking-wider">
-                        Especialidades Incluídas:
+                        Módulos:
                       </p>
                       <ul className="space-y-1 text-xs text-slate-200">
                         {flyer.highlights.map((h, i) => (
@@ -287,7 +287,7 @@ export const TecnogestFlyers: React.FC = () => {
                   <div className="space-y-1.5">
                     <p className="text-[11px] font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1">
                       <span className="material-symbols-outlined text-[14px] text-[#00D2FF]">card_giftcard</span>
-                      <span>Benefícios Garantidos:</span>
+                      <span>Benefícios:</span>
                     </p>
                     <div className="flex flex-wrap gap-1.5">
                       {flyer.benefits.slice(0, 3).map((ben, i) => (
@@ -342,7 +342,7 @@ export const TecnogestFlyers: React.FC = () => {
                   <button
                     onClick={() => setSelectedFlyer(flyer)}
                     className="h-10 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-all flex items-center justify-center gap-1 border border-white/15 cursor-pointer shrink-0"
-                    title="Ver Flyer em Detalhe"
+                    title="Ver detalhes"
                   >
                     <span className="material-symbols-outlined text-[18px]">fullscreen</span>
                     <span className="hidden sm:inline">Ver</span>
@@ -353,7 +353,7 @@ export const TecnogestFlyers: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="h-10 w-10 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-xl transition-all flex items-center justify-center shadow-xs shrink-0"
-                    title="Falar no WhatsApp"
+                    title="Contactar WhatsApp"
                   >
                     <span className="material-symbols-outlined text-[18px]">chat</span>
                   </a>
@@ -371,7 +371,7 @@ export const TecnogestFlyers: React.FC = () => {
             </div>
             <div>
               <p className="font-extrabold text-sm text-white">
-                "INOVAR PARA MELHOR SERVIR" • TÉCNOGEST ANGOLA
+                Técnogest Angola
               </p>
               <p className="text-xs text-slate-300">
                 Sede: Bairro Valódia, Ex Combatentes, Edifício 206, 10º Andar (Edifício da Comunicação Social)
@@ -411,7 +411,7 @@ export const TecnogestFlyers: React.FC = () => {
                 <span className={`text-[10px] font-black uppercase px-2.5 py-1 rounded-full ${selectedFlyer.badgeColor}`}>
                   {selectedFlyer.badge}
                 </span>
-                <span className="text-xs font-extrabold text-[#00D2FF]">TÉCNOGEST OFICIAL</span>
+                <span className="text-xs font-extrabold text-[#00D2FF]">TÉCNOGEST</span>
               </div>
               <button
                 onClick={() => setSelectedFlyer(null)}
@@ -439,7 +439,7 @@ export const TecnogestFlyers: React.FC = () => {
               {selectedFlyer.highlights && (
                 <div className="bg-white/10 rounded-2xl p-4 border border-white/10 space-y-2">
                   <p className="text-xs font-black uppercase text-[#00D2FF] tracking-wider">
-                    Disciplinas / Cursos Incluídos no Programa:
+                    Disciplinas incluídas:
                   </p>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
                     {selectedFlyer.highlights.map((item, i) => (
@@ -455,7 +455,7 @@ export const TecnogestFlyers: React.FC = () => {
               {/* Benefits */}
               <div className="space-y-2">
                 <p className="text-xs font-black uppercase text-[#00D2FF] tracking-wider">
-                  Benefícios Oficiais Incluídos:
+                  Benefícios incluídos:
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   {selectedFlyer.benefits.map((benefit, i) => (
@@ -470,7 +470,7 @@ export const TecnogestFlyers: React.FC = () => {
               {/* Contacts & Location Box */}
               <div className="bg-gradient-to-r from-[#071a3d] to-[#0d2a63] p-4 rounded-2xl border border-white/15 space-y-2 text-xs">
                 <p className="font-extrabold text-[#00D2FF] uppercase text-[11px]">
-                  Contactos & Inscrições Imediatas:
+                  Contactos:
                 </p>
                 <p className="text-white font-bold">
                   {selectedFlyer.contacts.join(' • ')}
@@ -493,7 +493,7 @@ export const TecnogestFlyers: React.FC = () => {
                 className="bg-[#25D366] hover:bg-[#1EBE5A] text-white font-bold text-xs py-2.5 px-4 rounded-xl transition-all flex items-center gap-1.5 shadow-md"
               >
                 <span className="material-symbols-outlined text-[16px]">chat</span>
-                <span>Falar com a Secretaria no WhatsApp</span>
+                <span>Falar com a secretaria</span>
               </a>
 
               <button
@@ -509,7 +509,7 @@ export const TecnogestFlyers: React.FC = () => {
                 className="bg-[#00D2FF] hover:bg-[#00B4DB] text-[#0A2558] font-black text-xs py-2.5 px-5 rounded-xl transition-all flex items-center gap-1.5 shadow-md cursor-pointer"
               >
                 <span className="material-symbols-outlined text-[16px]">how_to_reg</span>
-                <span>Preencher Ficha de Inscrição</span>
+                <span>Inscrever-me</span>
               </button>
             </div>
 
