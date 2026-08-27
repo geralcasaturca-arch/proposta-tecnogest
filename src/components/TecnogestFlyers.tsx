@@ -206,128 +206,65 @@ export const TecnogestFlyers: React.FC = () => {
                 activeTab === 'portugal'
                   ? 'bg-[#E53935] text-white font-extrabold shadow-sm'
                   : 'bg-white/10 text-slate-300 hover:bg-white/15 border border-white/10'
-              }`}
-            >
-              Plano Portugal
-            </button>
-          </div>
-        </div>
-
         {/* Banners Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredFlyers.map((flyer) => (
             <div
               key={flyer.id}
-              className="bg-[#0e2f6d] rounded-3xl border border-white/15 overflow-hidden shadow-xl hover:shadow-2xl hover:border-[#00D2FF]/60 transition-all duration-300 flex flex-col justify-between group"
+              className="bg-white/5 rounded-2xl border border-white/10 overflow-hidden hover:border-white/20 transition-all duration-300 flex flex-col group"
             >
-              {/* Top Banner Header with Badge & Slogan */}
-              <div className="p-4 bg-[#071a3d] border-b border-white/10 flex items-center justify-between gap-2">
-                <span className={`text-[10px] font-black uppercase px-2.5 py-1 rounded-full ${flyer.badgeColor} shadow-xs`}>
-                  {flyer.badge}
-                </span>
-                <span className="text-[10px] font-extrabold text-[#00D2FF] uppercase tracking-wider flex items-center gap-1">
-                  <span className="material-symbols-outlined text-[14px]">verified</span>
-                  <span>INEFOP / MAPTSS</span>
-                </span>
-              </div>
-
-              {/* Flyer Visual Body */}
-              <div className="relative h-48 sm:h-52 overflow-hidden bg-slate-900">
+              {/* Image Header with floating badge */}
+              <div className="relative h-48 sm:h-52 overflow-hidden bg-[#0A2558]">
                 <SafeImage
                   src={flyer.imageBg}
                   alt={flyer.title}
                   category={flyer.id}
                   wrapperClassName="w-full h-full"
-                  className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 opacity-80"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0e2f6d] via-[#0e2f6d]/60 to-transparent"></div>
-
-                {/* Overlaid Brand Tag */}
-                <div className="absolute top-3 right-3 bg-white/95 text-[#0A2558] px-2.5 py-1 rounded-lg shadow-md flex items-center gap-1 text-[11px] font-black">
-                  <span className="material-symbols-outlined text-[#00D2FF] text-[16px]">engineering</span>
-                  <span>TÉCNOGEST</span>
-                </div>
-
-                {/* Overlaid Title */}
-                <div className="absolute bottom-3 left-4 right-4">
-                  <p className="text-[11px] font-extrabold text-[#00D2FF] uppercase tracking-wider mb-0.5">
-                    {flyer.durationOrDate}
-                  </p>
-                  <h3 className="text-lg sm:text-xl font-black text-white leading-tight drop-shadow-md">
-                    {flyer.title}
-                  </h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A2558]/90 to-transparent"></div>
+                
+                {/* Floating Badge */}
+                <div className="absolute top-4 left-4">
+                  <span className={`text-[10px] font-bold uppercase px-3 py-1.5 rounded-lg shadow-sm ${flyer.badgeColor}`}>
+                    {flyer.badge}
+                  </span>
                 </div>
               </div>
 
-              {/* Flyer Content Details */}
-              <div className="p-5 space-y-4 flex-grow flex flex-col justify-between">
-                <div className="space-y-3">
-                  <p className="text-xs text-slate-300 leading-relaxed font-medium">
+              {/* Card Body */}
+              <div className="p-6 flex flex-col flex-grow">
+                {/* Titles */}
+                <div className="mb-5">
+                  <p className="text-[11px] font-semibold text-[#00D2FF] uppercase tracking-wider mb-1.5">
+                    {flyer.durationOrDate}
+                  </p>
+                  <h3 className="text-lg font-bold text-white leading-tight mb-2">
+                    {flyer.title}
+                  </h3>
+                  <p className="text-sm text-slate-300 leading-relaxed">
                     {flyer.subtitle}
                   </p>
-
-                  {/* Highlights or Courses List */}
-                  {flyer.highlights && (
-                    <div className="bg-white/5 border border-white/10 rounded-xl p-3 space-y-1">
-                      <p className="text-[10px] font-black uppercase text-[#00D2FF] tracking-wider">
-                        Módulos:
-                      </p>
-                      <ul className="space-y-1 text-xs text-slate-200">
-                        {flyer.highlights.map((h, i) => (
-                          <li key={i} className="flex items-center gap-1.5">
-                            <span className="text-[#00D2FF] text-[14px]">✓</span>
-                            <span>{h}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {/* Benefits */}
-                  <div className="space-y-1.5">
-                    <p className="text-[11px] font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1">
-                      <span className="material-symbols-outlined text-[14px] text-[#00D2FF]">card_giftcard</span>
-                      <span>Benefícios:</span>
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {flyer.benefits.slice(0, 3).map((ben, i) => (
-                        <span
-                          key={i}
-                          className="bg-white/10 text-white text-[10px] font-semibold px-2 py-0.5 rounded-md border border-white/10"
-                        >
-                          {ben}
-                        </span>
-                      ))}
-                      {flyer.benefits.length > 3 && (
-                        <span className="text-[10px] text-[#00D2FF] font-bold self-center">
-                          +{flyer.benefits.length - 3} mais
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Address & Partners */}
-                  <div className="pt-2 border-t border-white/10 text-[11px] text-slate-300 space-y-1">
-                    <p className="flex items-start gap-1 text-[11px] text-slate-300">
-                      <span className="material-symbols-outlined text-[14px] text-[#00D2FF] shrink-0 mt-0.5">
-                        location_on
-                      </span>
-                      <span className="line-clamp-1">{flyer.location}</span>
-                    </p>
-                    <p className="text-[10px] text-slate-400 font-medium">
-                      Parceiros: {flyer.partners.join(' • ')}
-                    </p>
-                  </div>
                 </div>
 
-                {/* Actions - Aligned on the grid */}
-                <div className="pt-3.5 border-t border-white/10 flex items-center gap-2">
-                  <Button
-                    variant="secondary"
-                    size="md"
-                    icon="how_to_reg"
-                    iconPosition="left"
-                    fullWidth
+                {/* Bullet Points (Combined Highlights & Benefits max 3) */}
+                <div className="mb-6 space-y-2.5 mt-auto">
+                  {([...(flyer.highlights || []), ...flyer.benefits]).slice(0, 3).map((item, i) => (
+                    <div key={i} className="flex items-start gap-2.5 text-sm text-slate-200">
+                      <span className="material-symbols-outlined text-[#00D2FF] text-[18px] shrink-0">check</span>
+                      <span className="leading-snug">{item}</span>
+                    </div>
+                  ))}
+                  {([...(flyer.highlights || []), ...flyer.benefits]).length > 3 && (
+                     <div className="text-xs text-slate-400 font-medium pl-7">
+                       + {([...(flyer.highlights || []), ...flyer.benefits]).length - 3} mais detalhes no modal
+                     </div>
+                  )}
+                </div>
+
+                {/* Actions Footer */}
+                <div className="pt-4 border-t border-white/10 flex items-center gap-2 mt-auto">
+                  <button
                     onClick={() => {
                       if (flyer.courseId) {
                         navigateToEnroll(flyer.courseId);
@@ -335,24 +272,24 @@ export const TecnogestFlyers: React.FC = () => {
                         navigateToEnroll();
                       }
                     }}
+                    className="flex-1 h-10 rounded-xl bg-[#00D2FF] text-[#0A2558] hover:bg-[#00B4DB] font-bold text-sm transition-colors"
                   >
-                    Fazer Inscrição
-                  </Button>
-
+                    Inscrever-me
+                  </button>
+                  
                   <button
                     onClick={() => setSelectedFlyer(flyer)}
-                    className="h-10 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs transition-all flex items-center justify-center gap-1 border border-white/15 cursor-pointer shrink-0"
+                    className="h-10 px-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm transition-colors border border-white/15 cursor-pointer"
                     title="Ver detalhes"
                   >
-                    <span className="material-symbols-outlined text-[18px]">fullscreen</span>
-                    <span className="hidden sm:inline">Ver</span>
+                    Detalhes
                   </button>
 
                   <a
                     href={`https://wa.me/244948235692?text=${encodeURIComponent(flyer.whatsappText)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="h-10 w-10 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-xl transition-all flex items-center justify-center shadow-xs shrink-0"
+                    className="h-10 w-10 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-xl transition-colors flex items-center justify-center shrink-0"
                     title="Contactar WhatsApp"
                   >
                     <span className="material-symbols-outlined text-[18px]">chat</span>
