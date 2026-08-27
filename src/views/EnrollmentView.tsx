@@ -85,7 +85,7 @@ export const EnrollmentView: React.FC = () => {
     poloId: preSelectedPoloId || (polos[0]?.id ?? ''),
     shift: 'Manhã (08h00 - 12h00)' as 'Manhã (08h00 - 12h00)' | 'Tarde (13h00 - 17h00)' | 'Noite (18h00 - 20h30)' | 'Sábados (08h00 - 14h00)',
     notes: '',
-    termsAccepted: true
+    termsAccepted: false
   });
 
   const [touched, setTouched] = useState<Record<string, boolean>>({});
